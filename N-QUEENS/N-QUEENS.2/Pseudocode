@@ -1,0 +1,29 @@
+Algorithm N_Queens
+
+1. Start
+2. Set N = 8
+3. Initialize board[N] = -1
+
+4. Function Safe(row, col)
+      For i = 0 to row - 1
+          If board[i] = col OR
+             abs(board[i] - col) = abs(i - row)
+              Return False
+      Return True
+
+5. Function Solve(row)
+      If row = N
+          Return True
+
+      For col = 0 to N - 1
+          If Safe(row, col)
+              board[row] = col
+
+              If Solve(row + 1)
+                  Return True
+
+      Return False
+
+6. If Solve(0) = True
+      Print the chessboard
+7. Stop
