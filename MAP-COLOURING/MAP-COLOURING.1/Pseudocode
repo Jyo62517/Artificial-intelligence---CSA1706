@@ -1,0 +1,37 @@
+Algorithm Graph_Coloring
+
+1. Start
+
+2. Define graph and colors
+   Colors = {Red, Green, Blue, Yellow}
+   Result = empty
+
+3. Function Safe(node, color)
+      For each neighbor of node
+          If neighbor has the same color
+              Return False
+      Return True
+
+4. Function Color_Graph(nodes)
+      If nodes is empty
+          Return True
+
+      node = first node in nodes
+
+      For each color in Colors
+          If Safe(node, color)
+              Assign color to node
+
+              If Color_Graph(remaining nodes)
+                  Return True
+
+              Remove color from node
+
+      Return False
+
+5. If Color_Graph(all nodes) = True
+      Print each node and its color
+   Else
+      Print "No solution"
+
+6. Stop
